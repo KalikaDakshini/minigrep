@@ -1,5 +1,5 @@
 pub mod config;
-pub mod search;
+pub mod funcs;
 
 pub use config::Config;
-pub use search::run;
+pub use funcs::run;

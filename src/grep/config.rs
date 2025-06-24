@@ -1,6 +1,9 @@
+use std::env;
+
 pub struct Config<'a> {
     query: &'a str,
     path: &'a str,
+    case: bool,
 }
 
 impl<'a> Config<'a> {
@@ -17,6 +20,7 @@ impl<'a> Config<'a> {
         Ok(Self {
             query: &args[1],
             path: &args[2],
+            case: env::var("IGNORE_CASE").is_ok(),
         })
     }
 
@@ -28,6 +32,10 @@ impl<'a> Config<'a> {
     /// Return the path attribute
     pub fn path(&self) -> &str {
         self.path
+    }
+
+    pub fn ignore_case(&self) -> bool {
+        self.case
     }
 }
 
