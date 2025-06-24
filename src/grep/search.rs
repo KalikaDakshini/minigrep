@@ -1,4 +1,4 @@
-use crate::config::Config;
+use super::config::Config;
 use std::error::Error;
 use std::fs;
 

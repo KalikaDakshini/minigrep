@@ -1,7 +1,6 @@
-use config::Config;
+use grep::config::Config;
 use std::{env, process};
 
-mod config;
 mod grep;
 
 fn main() {
